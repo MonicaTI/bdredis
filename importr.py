@@ -1,0 +1,19 @@
+#iniciar o ubuntu e depois o redis com o comando /home/monica/redis.sh
+import redis
+r = redis.Redis(host='127.0.0.1', port=6379, db=2)
+pessoa10 = {"nome":"Leonardo","idade":22,"cidade": "Chapeco"}
+pessoa20 = {"nome":"Pedro","idade":24,"cidade": "Chapeco"}
+pessoa30 = {"nome":"Maria","idade":31,"cidade": "Nonoai"}
+
+data = {
+    'doguinho': {
+        'scientific-name' : 'Canis familiaris'
+    }
+}
+r.json().set('doc', '$', pessoa20)
+r.json().set('dog', '$', data)
+doc = r.json().get('doc', '$')
+dog = r.json().get('doc', '$.pessoa1')
+scientific_name = r.json().get('dog', '$..scientific-name')
+print(scientific_name)
+print(doc)

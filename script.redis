@@ -1,0 +1,28 @@
+SELECT 0
+SET VALOR 1000
+INCR VALOR
+APPEND VALOR 20
+SET NOME "MARIA HERNANDES"
+SETRANGE NOME 15 " MORA EM PORTO ALEGRE"
+JSON.SET pessoa1 $ '{"nome":"Leonardo","idade":22,"cidade":"Chapeco"}'
+JSON.SET pessoa2 $ '{"nome":"Pedro","idade":24,"cidade": "Chapeco"}'
+JSON.SET pessoa3 $ '{"nome":"Maria","idade":24,"cidade": "Chapeco"}'
+JSON.SET pessoa4 $ '{"nome":"Antonio","datanasc":{"dia":10, "mes":10, "ano":2000},"cidade": "Chapeco"}'
+JSON.SET equip1 $ '{"descricao":"Notebook Lenovo", "valor":4500, "configuracao":{"ram":"8gb", "ssd":256, "processador":"intel i5"}}'
+JSON.SET equip2 $ '{"descricao":"Notebook Asus", "valor":3000, "configuracao":{"ram":"8gb", "HD":1000, "unidade":"GB", "processador":"intel i5"}}'
+JSON.SET equip3 $ '{"descricao":"Notebook Philco", "valor":3980, "configuracao":{"ram":"8gb", "HD":500, "unidade":"GB", "processador":"intel i3"}}'
+hmset pessoa:1 nome "Maria" idade 32 peso 65 altura 1.63
+hmset pessoa:2 nome "Pedro" idade 21 peso 90 altura 1.78
+hmset pessoa:3 nome "Ana" idade 14 peso 50 altura 1.59
+hmset pessoa:4 nome "Jose" idade 65 peso 80 altura 1.80
+hmset pessoa:5 nome "Gerson" peso 83 altura 1.85 dia 12 mes 12 ano 1980
+rpush lista "Monica Tissiani De Toni Pereira"
+rpush lista "Pedro de Alcantara Pereira"
+rpush lista "Maria Amelia Dias"
+rpush lista "Jose Carlos Pedrozo"
+zadd pessoas 26 Maria
+zadd pessoas 30 Jose
+zadd pessoas 1 Rodrigo
+zadd pessoas 12 Joao
+zadd pessoas 19 Carla
+zadd pessoas 90 Carla
